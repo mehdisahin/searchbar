@@ -50,8 +50,6 @@ export default function ResultTable({ searchQuery }) {
         // parse results here
         const otels = jsonedResult.data.items;
 
-        console.log("fetchedData in resultsTable", otels);
-
         const parsedResult = otels.map((otel) => ({
           name: otel.name,
           price: otel.minPrice || otel.maxPrice,
@@ -64,11 +62,7 @@ export default function ResultTable({ searchQuery }) {
     };
 
     fetchData();
-
-    console.log("fetch data is running");
   }, [searchQuery]);
-
-  console.log("searchquery in resultsTable", { searchQuery });
 
   return (
     <TableContainer component={Paper}>

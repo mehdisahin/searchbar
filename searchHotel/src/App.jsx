@@ -3,7 +3,8 @@ import "./App.css";
 
 import SearchBar2 from "./components/AutoComplete";
 import ResultTable from "./components/ResultTable";
-import { Box, Container, Stack } from "@mui/material";
+import { Box, Container, Stack, Icon } from "@mui/material";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [results, setResults] = useState([]);
@@ -16,14 +17,22 @@ function App() {
   };
 
   return (
-    <Container>
+    <Container maxWidth="100%" padding-top="40px">
       <Stack
         sx={{
-          pt: 20,
+          pt: 15,
         }}
       >
         <Stack direction="column" mb={10} spacing={4}>
-          <Stack alignItems="center" justifyContent="center">
+          <Stack
+            alignItems="space-between"
+            justifyContent="center"
+            border={1}
+            borderRadius={5}
+            borderColor={"#BBBBBB"}
+          >
+            {/* <Navbar /> */}
+
             <SearchBar2 onClick={handleCLick} />
           </Stack>
           <Stack>
